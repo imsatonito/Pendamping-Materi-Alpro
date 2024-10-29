@@ -23,17 +23,34 @@ except ZeroDivisionError:
     print("Tidak bisa membagi dengan nol!")
 except ValueError:
     print("Input harus berupa angka.")
+except AssertionError:
+    print("Terjadi AssertionError!")
+except FileNotFoundError:
+    print("File yang diminta tidak ditemukan!")
+except IndexError:
+    print("Index yang diakses berada di luar batas!")
+except KeyError:
+    print("Kunci yang diminta tidak ditemukan dalam dictionary!")
+except TypeError:
+    print("Operasi atau fungsi diterapkan pada tipe yang tidak sesuai!")
+except Exception as e:
+    print(f"Kesalahan yang tidak terduga terjadi: {e}")
 ```
 
 - **Penjelasan**:
   - Blok `try` berisi kode yang mungkin menimbulkan kesalahan.
   - Jika pengguna memasukkan `0`, maka `ZeroDivisionError` akan terjadi dan ditangani oleh blok `except` yang sesuai.
   - Jika pengguna memasukkan input yang bukan angka, `ValueError` akan terjadi, dan blok `except` yang sesuai akan menangani kesalahan tersebut.
+  - Blok `except` lainnya menangani berbagai kesalahan seperti `AssertionError`, `FileNotFoundError`, `IndexError`, `KeyError`, `TypeError`, dan kesalahan lainnya dengan `Exception`.
 
 **Beberapa Contoh Kesalahan Umum**:
 - `ZeroDivisionError` - Kesalahan pembagian dengan nol.
 - `ValueError` - Kesalahan jika konversi tipe data gagal, misalnya `int('abc')`.
 - `FileNotFoundError` - Kesalahan jika file yang dicari tidak ditemukan.
+- `IndexError` - Kesalahan jika mencoba mengakses indeks yang tidak ada dalam suatu list atau tuple.
+- `KeyError` - Kesalahan jika kunci yang diminta tidak ada dalam dictionary.
+- `TypeError` - Kesalahan jika operasi atau fungsi diterapkan pada tipe data yang tidak sesuai.
+- `AssertionError` - Kesalahan jika pernyataan `assert` gagal.
 
 ## 2. Raise
 `raise` digunakan untuk secara manual menimbulkan kesalahan (error). Terkadang, kita ingin menimbulkan kesalahan sendiri untuk memastikan bahwa kode kita bekerja seperti yang diharapkan.
